@@ -1,6 +1,6 @@
 //DOT X Y MODE
 void DOT(int X, int Y, boolean MODE) {
-  display[X][Y]=MODE;
+  display[Y][X]=MODE;
 }
 //RECT X Y WIDTH HEIGHT
 void RECT(int X, int Y, int WIDTH, int HEIGHT) {
@@ -38,36 +38,36 @@ void LINE(float X, float Y, float X2, float Y2) {
 
 //VAR NAME MEANING
 void VAR(String NAME, String MEANING) {
-  vars.put(NAME, vars.getOrDefault(vars.get(MEANING), MEANING));
+  vars.put(NAME, vars.getOrDefault(MEANING, MEANING));
 }
 
 //ADD
 void ADD(String A, String B, String C) {
-  vars.put(A, str(int(vars.getOrDefault(vars.get(B), B))+int(vars.getOrDefault(vars.get(C), C))));
+  vars.put(A, str(int(vars.getOrDefault(B, B))+int(vars.getOrDefault(C, C))));
 }
 //SUB
 void SUB(String A, String B, String C) {
-  vars.put(A, str(int(vars.getOrDefault(vars.get(B), B))-int(vars.getOrDefault(vars.get(C), C))));
+  vars.put(A, str(int(vars.getOrDefault(B, B))-int(vars.getOrDefault(C, C))));
 }
 //MUL
 void MUL(String A, String B, String C) {
-  vars.put(A, str(int(vars.getOrDefault(vars.get(B), B))*int(vars.getOrDefault(vars.get(C), C))));
+  vars.put(A, str(int(vars.getOrDefault(B, B))*int(vars.getOrDefault(C, C))));
 }
 //DIV
 void DIV(String A, String B, String C) {
-  vars.put(A, str(int(vars.getOrDefault(vars.get(B), B))/int(vars.getOrDefault(vars.get(C), C))));
+  vars.put(A, str(int(vars.getOrDefault(B, B))/int(vars.getOrDefault(C, C))));
 }
 //AND
 void AND(String A, String B, String C) {
-  vars.put(A, str(int(boolean(int(vars.getOrDefault(vars.get(B), B))) && boolean(int(vars.getOrDefault(vars.get(C), C))))));
+  vars.put(A, str(int(boolean(int(vars.getOrDefault(B, B))) && boolean(int(vars.getOrDefault(C, C))))));
 }
 //OR
 void OR(String A, String B, String C) {
-  vars.put(A, str(int(boolean(int(vars.getOrDefault(vars.get(B), B))) || boolean(int(vars.getOrDefault(vars.get(C), C))))));
+  vars.put(A, str(int(boolean(int(vars.getOrDefault(B, B))) || boolean(int(vars.getOrDefault(C, C))))));
 }
 //NOT
 void NOT(String A, String B) {
-  vars.put(A, str(int(!boolean(int(vars.getOrDefault(vars.get(B), B))))));
+  vars.put(A, str(int(!boolean(int(vars.getOrDefault(B, B))))));
 }
 //DELAY
 void DELAY(int MILLIS) {
@@ -82,17 +82,17 @@ void DELAY(int MILLIS) {
 }
 //SQR
 void SQR(String A, String B) {
-  vars.put(A, str(int(vars.getOrDefault(vars.get(B), B))*int(vars.getOrDefault(vars.get(B), B))));
+  vars.put(A, str(int(vars.getOrDefault(B, B))*int(vars.getOrDefault(B, B))));
 }
 //SQRT
 //POW
 void POW(String A, String B) {
-  vars.put(A, str(pow(int(vars.getOrDefault(vars.get(B), B)), int(vars.getOrDefault(vars.get(B), B)))));
+  vars.put(A, str(pow(int(vars.getOrDefault(B, B)), int(vars.getOrDefault(B, B)))));
 }
 //FAC
 //ABS
 void ABS(String A, String B) {
-  vars.put(A, str(abs(int(vars.getOrDefault(vars.get(B), B)))));
+  vars.put(A, str(abs(int(vars.getOrDefault(B, B)))));
 }
 //ARR
 //GET

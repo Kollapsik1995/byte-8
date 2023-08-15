@@ -37,6 +37,7 @@ void draw() {
     Execute();
   }
   drawDisplay();
+  println(int(vars.getOrDefault(vars.get("A"), "A")));
 }
 
 
