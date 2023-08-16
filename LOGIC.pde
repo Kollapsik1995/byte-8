@@ -12,8 +12,8 @@ void Execute() {
     case "RECT":
       RECT(int(vars.getOrDefault(elements[1], elements[1])), int(vars.getOrDefault(elements[2], elements[2])), int(vars.getOrDefault(elements[3], elements[3])), int(vars.getOrDefault(elements[4], elements[4])));
       break;
-    case "RND"
-      RND(element[1]);
+    case "RND":
+      RND(elements[1]);
       break;
     case "LINE":
       LINE(int(vars.getOrDefault(elements[1], elements[1])), int(vars.getOrDefault(elements[2], elements[2])), int(vars.getOrDefault(elements[3], elements[3])), int(vars.getOrDefault(elements[4], elements[4])));
