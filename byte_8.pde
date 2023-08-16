@@ -10,16 +10,16 @@ int halfBetweenPixels;
 int shadowMove;
 int step;
 SDrop drop;
-String[] Program;
+String[] Program=null;
 boolean loaded = false;
 int numCom = 0;
 int now = 0;
 boolean del = false;
 PImage FRAME;
+boolean locker = false;
 
 void setup() {
   size(600, 600);
-  frameRate(120);
   drop = new SDrop(this);
   displaySize = width;
   pixelSize = displaySize/32;
@@ -30,6 +30,7 @@ void setup() {
   noStroke();
   surface.setTitle("BYTE 8");
   surface.setIcon(loadImage("icon.png"));
+  
   background(#62B77F);
   SHOW();
 }
@@ -37,11 +38,17 @@ void setup() {
 
 void draw() {
   background(#62B77F);
-  if (loaded) {
-    Execute();
+  if (loaded && locker) {
+      SHOW();
+      locker = false;
   }
-  image(FRAME,0,0,width,height);
-  println(int(vars.getOrDefault(vars.get("A"), "A")));
+  image(FRAME, 0, 0, width, height);
+}
+
+void processor() {
+  while (true) {
+      Execute();
+  }
 }
 
 
@@ -64,5 +71,6 @@ void dropEvent(DropEvent theDropEvent) {
     File myFile = theDropEvent.file();
     Program = loadStrings(myFile.getAbsolutePath());
     loaded = true;
+    thread("processor");
   }
 }

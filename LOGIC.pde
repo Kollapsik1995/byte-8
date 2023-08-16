@@ -53,7 +53,9 @@ void Execute() {
     case "NOT":
       NOT(elements[1], elements[2]);
       break;
-
+    case "SHOW":
+      locker = true;
+      break;
 
     case "SQR":
       SQR(elements[1], elements[2]);
@@ -81,10 +83,6 @@ void Execute() {
 
     case "ABS":
       ABS(elements[1], elements[2]);
-      break;
-
-    case "SHOW":
-      SHOW();
       break;
     case "VAR":
       VAR(elements[1], elements[2]);
