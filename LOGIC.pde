@@ -56,9 +56,24 @@ void Execute() {
     SQR(elements[1], elements[2]);
     break;
 
+  case "CMP":
+    CMP(elements[1], elements[2]);
+    break;
+  case "CMPB":
+    CMPB(elements[1], elements[2]);
+    break;
+  case "CMPS":
+    CMPS(elements[1], elements[2]);
+    break;
+  case "CMPN":
+    CMPN(elements[1], elements[2]);
+    break;
+  case "SQRT":
+    SQRT(elements[1], elements[2]);
+    break;
 
   case "POW":
-    POW(elements[1], elements[2]);
+    POW(elements[1], elements[2], elements[3]);
     break;
 
   case "ABS":

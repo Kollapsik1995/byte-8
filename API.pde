@@ -85,18 +85,38 @@ void SQR(String A, String B) {
   vars.put(A, str(int(vars.getOrDefault(B, B))*int(vars.getOrDefault(B, B))));
 }
 //SQRT
-//POW
-void POW(String A, String B) {
-  vars.put(A, str(pow(int(vars.getOrDefault(B, B)), int(vars.getOrDefault(B, B)))));
+void SQRT(String A, String B) {
+  vars.put(A, str(sqrt(int(vars.getOrDefault(B, B)))));
 }
-//FAC
+//POW
+void POW(String A, String B, String C) {
+  vars.put(A, str(pow(int(vars.getOrDefault(B, B)), int(vars.getOrDefault(C, C)))));
+}
 //ABS
 void ABS(String A, String B) {
   vars.put(A, str(abs(int(vars.getOrDefault(B, B)))));
 }
-//ARR
-//GET
 //CMP
+void CMP(String A, String B) {
+  if(!vars.getOrDefault(A, A).equals(vars.getOrDefault(B, B))){
+    numCom++;
+  }
+}
+void CMPB(String A, String B) {
+  if(!(int(vars.getOrDefault(A, A))>int(vars.getOrDefault(B, B)))){
+    numCom++;
+  }
+}
+void CMPS(String A, String B) {
+  if(!(int(vars.getOrDefault(A, A))<int(vars.getOrDefault(B, B)))){
+    numCom++;
+  }
+}
+void CMPN(String A, String B) {
+  if(!(int(vars.getOrDefault(A, A))!=int(vars.getOrDefault(B, B)))){
+    numCom++;
+  }
+}
 //GOTO
 void GOTO(String M){
   for(int i = 0; i < Program.length; i++){
