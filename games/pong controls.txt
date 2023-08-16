@@ -1,0 +1,3 @@
+5 - puse/start
+8 - racket up
+2 - racket down

@@ -15,9 +15,11 @@ boolean loaded = false;
 int numCom = 0;
 int now = 0;
 boolean del = false;
+PImage FRAME;
 
 void setup() {
   size(600, 600);
+  frameRate(120);
   drop = new SDrop(this);
   displaySize = width;
   pixelSize = displaySize/32;
@@ -28,6 +30,8 @@ void setup() {
   noStroke();
   surface.setTitle("BYTE 8");
   surface.setIcon(loadImage("icon.png"));
+  background(#62B77F);
+  SHOW();
 }
 
 
@@ -36,7 +40,7 @@ void draw() {
   if (loaded) {
     Execute();
   }
-  drawDisplay();
+  image(FRAME,0,0,width,height);
   println(int(vars.getOrDefault(vars.get("A"), "A")));
 }
 

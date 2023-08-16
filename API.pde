@@ -124,16 +124,19 @@ void GOTO(String M){
     numCom=i-1;
   }
 }
-//BEGIN
-//END
-//INC
-//DEC
-//SET - установка элемента массива или уже созданной переменной (2 функции)
 //RND
+void RND(String A){
+  vars.put(A, str(int(random(0,32))));
+}
 //PRESS
 void PRESS(String KEY, String M){
   char realkey = KEY.charAt(0);
   if(keyPressed && key==realkey){
     GOTO(M);
   }
+}
+
+void SHOW(){
+  drawDisplay();
+  FRAME = get(0,0,width,height);
 }
