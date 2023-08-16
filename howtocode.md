@@ -12,40 +12,40 @@
 
 - DIV [A] [B] [C]    - Деление переменных (или чисел) B и C и запись результата в A
 
-- SQR
+- SQR [A] [B]        - Возведение переменной (или числа) B в квадрат с сохранением в переменную A
 
-- SQRT               
+- SQRT[A] [B]             
 
-- POW
+- POW [A] [B] [C]
 
-- AND
+- AND [A] [B] [C]
 
-- OR
+- OR  [A] [B] [C]
 
-- NOT
+- NOT [A] [B]
 
-- CMP
+- CMP [A] [B]
 
-- CMPB
+- CMPB[A] [B]
 
-- CMPS
+- CMPS[A] [B]
 
-- CMPN
+- CMPN[A] [B]
 
-- ABS
+- ABS [A] [B]
 
 - SHOW
 
 - CLEAR
 
-- RECT
+- RECT[A] [B] [C] [D]
 
-- LINE
+- LINE[A] [B] [C] [D]
 
-- DOT
+- DOT [A] [B]
 
-- DELAY
+- DELAY[A]
 
-- GOTO
+- GOTO [A]
 
-- PRESS
+- PRESS[A] [B]
