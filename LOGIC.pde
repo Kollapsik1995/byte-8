@@ -2,7 +2,7 @@ HashMap<String, String> vars = new HashMap<String, String>();
 
 
 void Execute() {
-
+  try{
   //здесь выполняется программа
   String elements[] = Program[numCom].split(" ");
   switch(elements[0]) {
@@ -89,4 +89,21 @@ void Execute() {
   if (numCom==Program.length) {
     loaded = false;
   }
+  }
+  catch(Exception ex){
+    var output = createWriter("Error.log");
+    output.println("ERROR OCCURED IN LINE "+numCom);
+    output.println("Exception text: "+ex.getMessage());
+    output.close();
+    LINE(2,2,5,2);
+    LINE(2,4,5,4);
+    LINE(2,6,5,6);
+    LINE(2,4,2,2);
+    LINE(2,4,2,6);
+    LINE(5,4,5,7);
+    LINE(5,4,7,4);
+    LINE(8,4,8,7);
+    LINE(8,4,10,4);
+  }
+  
 }

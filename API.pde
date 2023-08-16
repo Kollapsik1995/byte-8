@@ -27,13 +27,13 @@ void LINE(float X, float Y, float X2, float Y2) {
   y=Y;
   display[int(y)][int(x)]=true;
   while ((int)x!=(int)X2 && (int)y!=(int)Y2) {
-    x+=((X2-X+1)/dist(X, Y, X2, Y2));
-    y+=((Y2-Y+1)/dist(X, Y, X2, Y2));
-    display[int(y)][int(x)]=true;
+    x+=((X2-X)/dist(X, Y, X2, Y2));
+    y+=((Y2-Y)/dist(X, Y, X2, Y2));
+    display[round(y)][round(x)]=true;
   }
-  x+=((X2-X+1)/dist(X, Y, X2, Y2));
-  y+=((Y2-Y+1)/dist(X, Y, X2, Y2));
-  display[int(y)][int(x)]=true;
+  x+=((X2-X)/dist(X, Y, X2, Y2));
+  y+=((Y2-Y)/dist(X, Y, X2, Y2));
+  display[round(y)][round(x)]=true;
 }
 
 //VAR NAME MEANING
